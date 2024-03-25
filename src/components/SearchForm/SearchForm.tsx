@@ -11,7 +11,7 @@ const Form = styled("form")`
 
 const InputContainer = styled("div")`
   display: flex;
-  width: 327px;
+  width: 100%;
   height: 58px;
   border-radius: 15px;
   background: #fff;

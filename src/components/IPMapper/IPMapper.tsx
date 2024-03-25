@@ -14,7 +14,7 @@ const RecenterOnChange = ({
       duration: 5,
       easeLinearity: 0.75,
     });
-  }, [coords, map]);
+  }, [coords]);
   return null;
 };
 
@@ -32,11 +32,7 @@ function IPMapper({ coords }: { coords: { lat: number; lng: number } }) {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[coords.lat, coords.lng]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
+      <Marker position={[coords.lat, coords.lng]}></Marker>
       <RecenterOnChange coords={coords} />
     </MapContainer>
   );

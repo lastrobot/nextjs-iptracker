@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { IPData, ipQuery } from "@/app/api";
 import SearchForm from "../SearchForm";
 import LazyIPMapper from "../IPMapper/LazyIPMapper";
+import InfoBox from "../InfoBox";
 
 function IPTracker({ initialIpAddress }: { initialIpAddress: string }) {
   const [ipAddress, setIpAddress] = React.useState(initialIpAddress);
@@ -33,6 +34,7 @@ function IPTracker({ initialIpAddress }: { initialIpAddress: string }) {
           handleInputChange={handleInputChange}
           ipAddress={ipQueryField}
         />
+        <InfoBox data={data} />
       </Header>
 
       <LazyIPMapper coords={{ lat, lng }} />
@@ -41,6 +43,7 @@ function IPTracker({ initialIpAddress }: { initialIpAddress: string }) {
 }
 
 const Header = styled("header")({
+  position: "relative",
   background: "url('/pattern-bg-mobile.png') no-repeat",
   backgroundSize: "cover",
   padding: "32px",
