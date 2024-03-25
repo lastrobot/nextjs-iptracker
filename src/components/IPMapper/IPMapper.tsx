@@ -14,7 +14,7 @@ const RecenterOnChange = ({
       duration: 5,
       easeLinearity: 0.75,
     });
-  }, [coords]);
+  }, [coords, map]);
   return null;
 };
 
