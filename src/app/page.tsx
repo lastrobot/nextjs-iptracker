@@ -1,20 +1,30 @@
-
-import {  styled } from '@pigment-css/react';
 import { headers } from "next/headers";
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
+import { ipQuery } from "././api";
+import IPTracker from "@/components/IPTracker";
 
-const MainWrapper = styled('main')({
-  background: "url('/pattern-bg-mobile.png') no-repeat",
-  height: "100%",
-  "@media (min-width: 375px)": {
-    background: "url('/pattern-bg-desktop.png') no-repeat",
-  },
-});
+export default async function Home() {
+  let ip = headers().get("x-forwarded-for") || "8.8.8.8";
+  if (ip === "::1") {
+    ip = "8.8.8.8";
+  }
 
-export default function Home() {
-  const ip = headers().get("x-forwarded-for") || "not found";
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: [`ipquery${ip}`],
+    queryFn: () => ipQuery({ ipAddress: ip }),
+  });
+
   return (
-    <MainWrapper>
-     <p>{ip}</p>
-    </MainWrapper>
+    <main>
+      <HydrationBoundary state={dehydrate(queryClient)}>
+        <IPTracker initialIpAddress={ip} />
+      </HydrationBoundary>
+    </main>
   );
 }

@@ -1,4 +1,6 @@
-
+:root {
+  -dark-grey: hsl(0, 0%, 17%);
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -15,7 +17,24 @@ body {
 }
 
 body {
-  color: hsl(0, 0%, 17%);
+  color: var(--dark-grey);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #fff;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 93.75%;
+  letter-spacing: -0.286px;
 }
 
 a {
@@ -23,3 +42,13 @@ a {
   text-decoration: none;
 }
 
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+#map {
+  height: calc(100vh - 300px);
+}

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
-import './globals.css';
-import '@pigment-css/react/styles.css';
+import Providers from "./providers";
+import ReactDOM from "react-dom";
+import "./globals.css";
+import "@pigment-css/react/styles.css";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -15,9 +17,38 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // ReactDOM.preload("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css", {
+  //   as: "stylesheet",
+  //   integrity: "sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=",
+  //   crossOrigin: "",
+  // });
+
+  // ReactDOM.preload("https://unpkg.com/leaflet@1.9.4/dist/leaflet.js", {
+  //   as: "script",
+  //   integrity: "sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=",
+  //   crossOrigin: "",
+  // });
+
   return (
     <html lang="en">
-      <body className={rubik.className}>{children}</body>
+      <head>
+        <link
+          id="leaflet-css"
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossOrigin="anonymous"
+        />
+        <script
+          id="leaflet-script"
+          src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body className={rubik.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
