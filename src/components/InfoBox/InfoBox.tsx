@@ -81,7 +81,7 @@ const List = styled("ul")`
       &::after {
         position: absolute;
         top: 5px;
-        right: -62px;
+        right: -45px;
         content: "";
         width: 1px;
         height: 75px;
