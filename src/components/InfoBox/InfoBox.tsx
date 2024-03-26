@@ -62,6 +62,8 @@ const List = styled("ul")`
     height: 100%;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: flex-start;
+    padding-top: 37px;
 
     h2 {
       font-size: 0.75rem;
@@ -79,8 +81,7 @@ const List = styled("ul")`
       &::after {
         position: absolute;
         top: 5px;
-        top: -9px;
-        right: -45px;
+        right: -62px;
         content: "";
         width: 1px;
         height: 75px;
