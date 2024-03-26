@@ -16,7 +16,7 @@ const BoxWrapper = styled("div")`
   @media (min-width: 768px) {
     max-width: 1110px;
     height: 161px;
-    top: 215px;
+    top: 200px;
   }
 `;
 const List = styled("ul")`

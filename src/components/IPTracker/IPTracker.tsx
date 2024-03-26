@@ -47,7 +47,7 @@ const Header = styled("header")({
   background: "url('/pattern-bg-mobile.png') no-repeat",
   backgroundSize: "cover",
   padding: "32px",
-  height: "300px",
+  height: "280px",
   "@media (min-width: 376px)": {
     background: "url('/pattern-bg-desktop.png') no-repeat",
     backgroundSize: "cover",
