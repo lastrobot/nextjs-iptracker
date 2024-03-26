@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMap } from "react-leaflet";
 
 const RecenterOnChange = ({
   coords,
@@ -19,8 +19,6 @@ const RecenterOnChange = ({
 };
 
 function IPMapper({ coords }: { coords: { lat: number; lng: number } }) {
-  const [map, setMap] = React.useState(null);
-  console.log(coords.lat, coords.lng);
   return (
     <MapContainer
       center={[coords.lat, coords.lng]}

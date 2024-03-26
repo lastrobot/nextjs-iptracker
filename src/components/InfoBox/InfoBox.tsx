@@ -34,11 +34,12 @@ const List = styled("ul")`
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 7px;
   }
 
   h2 {
     color: #2c2c2c;
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -49,14 +50,15 @@ const List = styled("ul")`
 
   p {
     color: #2c2c2c;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 500;
     line-height: 120%;
     letter-spacing: -0.179px;
+    text-align: center;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     height: 100%;
     flex-direction: row;
     justify-content: space-evenly;
@@ -66,12 +68,13 @@ const List = styled("ul")`
     }
 
     p {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
     }
 
     li {
       position: relative;
-      gap: 16px;
+      max-width: 270px;
+      gap: 13px;
 
       &::after {
         position: absolute;

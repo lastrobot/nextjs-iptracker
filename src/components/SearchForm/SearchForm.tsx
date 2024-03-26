@@ -82,7 +82,13 @@ function SearchForm({
         <label htmlFor="IpInput">IP Address Tracker</label>
       </h1>
       <InputContainer>
-        <input id="IpInput" onChange={handleInputChange} value={ipAddress} />
+        <input
+          id="IpInput"
+          onChange={handleInputChange}
+          value={ipAddress}
+          placeholder="Search for any IP address or domain"
+          pattern="(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)_*(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)_*){3}"
+        />
         <button type="submit">
           <VisuallyHiddenSpan>search</VisuallyHiddenSpan>
           <svg

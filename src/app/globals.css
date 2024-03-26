@@ -1,5 +1,5 @@
 :root {
-  -dark-grey: hsl(0, 0%, 17%);
+  --dark-grey: hsl(0, 0%, 17%);
 }
 * {
   box-sizing: border-box;
@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
   height: 100%;
   font-weight: 400;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 body {
