@@ -3,9 +3,7 @@ export const ipQuery = async ({
 }: {
   ipAddress: string;
 }): Promise<IPData> => {
-  const response = await fetch(
-    `https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.NEXT_PUBLIC_API_KEY}&ipAddress=${ipAddress}`
-  );
+  const response = await fetch(`/api?ipAddress=${ipAddress}`);
 
   if (!response.ok) {
     throw new Error("Network response was not ok");
