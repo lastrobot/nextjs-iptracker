@@ -7,7 +7,7 @@ const BoxWrapper = styled("div")`
   margin: 0 auto;
   right: 32px;
   left: 32px;
-  top: 150px;
+  top: 164px;
   border-radius: 15px;
   background-color: #fff;
   box-shadow: 0px 50px 50px -25px rgba(0, 0, 0, 0.1);

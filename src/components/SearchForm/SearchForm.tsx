@@ -6,7 +6,11 @@ const Form = styled("form")`
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
+
+  @media (min-width: 768px) {
+    gap: 32px;
+  }
 `;
 
 const InputContainer = styled("div")`
