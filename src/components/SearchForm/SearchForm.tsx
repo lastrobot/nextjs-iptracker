@@ -92,8 +92,9 @@ function SearchForm({
           value={ipAddress}
           placeholder="Search for any IP address or domain"
           pattern="(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)_*(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)_*){3}"
+          data-test="input-ipaddress"
         />
-        <button type="submit">
+        <button type="submit" data-test="btn-search">
           <VisuallyHiddenSpan>search</VisuallyHiddenSpan>
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -106,19 +106,19 @@ function InfoBox({ data }: { data: IPData | undefined }) {
       <List>
         <li>
           <h2>IP Address</h2>
-          <p>{data.ip}</p>
+          <p data-test="info-ip">{data.ip}</p>
         </li>
         <li>
           <h2>Location</h2>
-          <p>{data.location.city}</p>
+          <p data-test="info-location">{data.location.city}</p>
         </li>
         <li>
           <h2>Timezone</h2>
-          <p>{`UTC ${data.location.timezone}`}</p>
+          <p data-test="info-timezone">{`UTC ${data.location.timezone}`}</p>
         </li>
         <li>
           <h2>ISP</h2>
-          <p>{data.isp}</p>
+          <p data-test="info-isp">{data.isp}</p>
         </li>
       </List>
     </BoxWrapper>
