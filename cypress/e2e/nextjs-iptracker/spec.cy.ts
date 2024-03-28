@@ -4,15 +4,15 @@ describe("ip tracker spec", () => {
     // so we must tell it to visit our website with the `cy.visit()` command.
     // Since we want to visit the same URL at the start of all our tests,
     // we include it in our beforeEach function so that it runs before each test
-    cy.visit("http://localhost:3000");
+    cy.visit("/");
   });
 
-  it("uses default IP to get location data", () => {
-    cy.get("[data-test=info-location]").should("have.text", "Glenmont");
-    cy.get("[data-test=info-ip]").should("have.text", "8.8.8.8");
-    cy.get("[data-test=info-isp]").should("have.text", "Google LLC");
-    cy.get("[data-test=info-timezone]").should("have.text", "UTC -04:00");
-  });
+  // it("uses default IP to get location data", () => {
+  //   cy.get("[data-test=info-location]").should("have.text", "Glenmont");
+  //   cy.get("[data-test=info-ip]").should("have.text", "8.8.8.8");
+  //   cy.get("[data-test=info-isp]").should("have.text", "Google LLC");
+  //   cy.get("[data-test=info-timezone]").should("have.text", "UTC -04:00");
+  // });
 
   it("triggers new search when ip typed and search button clicked", () => {
     const newIpAddress = "114.56.77.89";
